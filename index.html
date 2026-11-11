@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" class="noscript">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quarry · Hide-and-seek, for real</title>
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<style>
+@font-face { font-family: "Space Grotesk"; src: url("assets/space_grotesk.ttf"); font-weight: 300 700; font-display: swap; }
+:root { --paper:#0E141B; --card:#17202A; --field:#243140; --line:#2E3B4A; --ink:#F4F2E9; --muted:#9AA5B1; --faint:#6B7684;
+        --lavender:#C6B4FF; --on-lavender:#1B1530; --lime:#D4F06B; --caution:#F5C25A; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--paper); color: var(--ink); font: 16px/1.6 "Segoe UI", Roboto, -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", Arial, sans-serif; }
+main { max-width: 760px; margin: 0 auto; padding: 32px 20px 56px; }
+a { color: var(--lavender); }
+.display, h1, h2, .wordmark, .chip, .label, .button, nav button { font-family: "Space Grotesk", sans-serif; }
+header { display: flex; align-items: center; gap: 12px; margin-bottom: 40px; }
+header a.home { display: flex; align-items: center; gap: 12px; color: var(--ink); text-decoration: none; }
+header svg { width: 34px; height: 34px; color: var(--ink); }
+.wordmark { font-weight: 600; font-size: 26px; letter-spacing: -0.4px; }
+.chip { margin-left: auto; font-weight: 600; font-size: 12px; letter-spacing: 1.6px; text-transform: uppercase; color: var(--on-lavender); background: var(--lavender); padding: 6px 14px; border-radius: 99px; white-space: nowrap; }
+h1 { font-weight: 600; font-size: clamp(34px, 7vw, 56px); line-height: 1.04; letter-spacing: -1px; }
+h1 em { font-style: normal; color: var(--lavender); }
+.lead { color: var(--muted); font-size: 18px; margin-top: 16px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 20px 22px; margin-top: 14px; }
+.label { font-weight: 600; font-size: 12px; letter-spacing: 1.6px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+h2 { font-weight: 600; font-size: 19px; margin-bottom: 6px; }
+.card p { color: var(--muted); }
+.card p + p { margin-top: 8px; }
+.button { display: inline-block; margin-top: 22px; margin-right: 10px; padding: 13px 22px; border-radius: 14px; font-weight: 600; text-decoration: none; background: var(--lavender); color: var(--on-lavender); }
+.button.secondary { background: var(--field); color: var(--ink); }
+nav.langs { display: flex; gap: 8px; margin: 24px 0 8px; flex-wrap: wrap; }
+nav.langs button { border: 1px solid var(--line); background: var(--field); color: var(--ink); border-radius: 99px; padding: 7px 16px; font-size: 14px; font-weight: 600; cursor: pointer; }
+nav.langs button[aria-pressed="true"] { background: var(--lavender); color: var(--on-lavender); border-color: var(--lavender); }
+section[lang] { display: none; }
+section[lang].shown { display: block; }
+section[lang="ko"] { word-break: keep-all; }
+.card p, .lead { overflow-wrap: anywhere; }
+.noscript section[lang="en"] { display: block; }
+footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--faint); font-size: 14px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+<main>
+<header><a class="home" href=""><svg viewBox="64 64 392 392" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M140,64H340L416,140V320L388,348L456,416L416,456L348,388L320,416H140L64,340V140L140,64ZM176,152L152,176V304L176,328H276L236,288L288,236L328,276V176L304,152H176Z"/></svg><span class="wordmark">quarry</span></a><span class="chip">Closed beta</span></header>
+<nav class="langs"><button type="button" data-lang="en">English</button><button type="button" data-lang="fr">Français</button><button type="button" data-lang="ko">한국어</button></nav><section lang="en"><h1>Hide-and-seek, <em>for real.</em></h1><p class="lead">Quarry turns your neighbourhood into the arena. Friends split into hunters and hunted, step outside and play a real chase: pings give away a direction, Bluetooth confirms the catch, and your phone beats like a heart when a hunter gets close.</p><div class="card"><h2>Two modes</h2><p>Cop / Robber: catch every robber before the time runs out. Zombie / Survivor: whoever is caught joins the horde, and the survivors race to an extraction zone.</p></div><div class="card"><h2>Closed beta</h2><p>Quarry is being tested on Android 10 and later, with Bluetooth and GPS. Ask the team for an invitation: quarrysupport@gmail.com.</p></div><a class="button" href="quarry-closed-beta.pdf">Beta presentation (PDF)</a><a class="button secondary" href="privacy/?lang=en">Privacy policy</a></section><section lang="fr"><h1>Le cache-cache, <em>en vrai.</em></h1><p class="lead">Quarry transforme ton quartier en arène. Les amis se répartissent entre chasseurs et chassés, sortent, et jouent une vraie traque : les pings trahissent une direction, le Bluetooth confirme la capture, et ton téléphone bat comme un cœur quand un chasseur approche.</p><div class="card"><h2>Deux modes</h2><p>Gendarmes / Voleurs : attrapez tous les voleurs avant la fin du temps. Zombie / Survivant : qui se fait attraper rejoint la horde, et les survivants foncent vers une zone d&#x27;extraction.</p></div><div class="card"><h2>Bêta fermée</h2><p>Quarry est en test sur Android 10 et plus, avec Bluetooth et GPS. Demande une invitation à l&#x27;équipe : quarrysupport@gmail.com.</p></div><a class="button" href="quarry-closed-beta.pdf">Présentation de la bêta (PDF, en anglais)</a><a class="button secondary" href="privacy/?lang=fr">Politique de confidentialité</a></section><section lang="ko"><h1>현실에서 즐기는 <em>진짜 숨바꼭질.</em></h1><p class="lead">Quarry는 우리 동네를 경기장으로 바꿔요. 친구들이 추격자와 도망자로 나뉘어 밖으로 나가 진짜 추격전을 벌여요. 핑은 방향을 알려 주고, 블루투스가 태그를 확인하며, 추격자가 가까워지면 휴대폰이 심장처럼 뛰어요.</p><div class="card"><h2>두 가지 모드</h2><p>경찰 / 도둑: 시간이 끝나기 전에 도둑을 모두 잡으세요. 좀비 / 생존자: 잡힌 사람은 무리에 합류하고, 생존자는 탈출 구역으로 달려가요.</p></div><div class="card"><h2>비공개 베타</h2><p>Quarry는 블루투스와 GPS가 있는 Android 10 이상에서 테스트 중이에요. 초대를 받으려면 팀에 연락하세요: quarrysupport@gmail.com</p></div><a class="button" href="quarry-closed-beta.pdf">베타 소개 (PDF, 영어)</a><a class="button secondary" href="privacy/?lang=ko">개인정보 처리방침</a></section>
+<footer><span>Quarry · a student project</span><a href="mailto:quarrysupport@gmail.com">quarrysupport@gmail.com</a></footer>
+</main>
+
+<script>
+  // Shows one language: the one asked in the address (?lang=fr), else the browser's, else English.
+  document.documentElement.classList.remove("noscript");
+  const langs = [...document.querySelectorAll("section[lang]")].map(s => s.lang);
+  const asked = new URLSearchParams(location.search).get("lang");
+  const browser = (navigator.language || "en").slice(0, 2);
+  function show(lang) {
+    document.querySelectorAll("section[lang]").forEach(s => s.classList.toggle("shown", s.lang === lang));
+    document.querySelectorAll("nav.langs button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === lang));
+    document.documentElement.lang = lang;
+  }
+  document.querySelectorAll("nav.langs button").forEach(b => b.addEventListener("click", () => show(b.dataset.lang)));
+  show(langs.includes(asked) ? asked : langs.includes(browser) ? browser : "en");
+</script>
+
+</body>
+</html>
