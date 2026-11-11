@@ -149,11 +149,46 @@ for code, (title, lead, cards, pdf, policy_label) in INDEX.items():
                     f'<a class="button secondary" href="privacy/?lang={code}">{html.escape(policy_label)}</a></section>')
 index = page("Quarry · Hide-and-seek, for real", "", lang_nav() + "".join(sections), "Closed beta")
 
+# ---------------------------------------------------------------- delete-account/index.html
+# Google Play asks for a page where anyone can ask for their account to be deleted, even without the app.
+DELETE = {
+    "en": ("Delete your Quarry account",
+           "You can ask for your account and its data to be deleted at any time, even if the app is no longer on your phone.",
+           [("How to ask", "Send an email to quarrysupport@gmail.com from the address of your account, with the subject \"Delete my account\". "
+                           "If you play as a guest or signed in with Google, add your username and your friend code (Profile and Friends tabs)."),
+            ("What is deleted", "Your account, your username, your email address, your profile photo, your friend code and your friends list, "
+                                "within 30 days of your request. We confirm by email once it is done."),
+            ("What stays on your phone", "Your game history is only stored on your phone: uninstalling Quarry removes it. "
+                                         "Rounds are already deleted from our server 30 seconds after they end.")]),
+    "fr": ("Supprimer ton compte Quarry",
+           "Tu peux demander la suppression de ton compte et de ses données à tout moment, même si l'appli n'est plus sur ton téléphone.",
+           [("Comment faire", "Envoie un email à quarrysupport@gmail.com depuis l'adresse de ton compte, avec l'objet « Supprimer mon compte ». "
+                              "Si tu joues en invité ou avec Google, indique ton pseudo et ton code ami (onglets Profil et Amis)."),
+            ("Ce qui est supprimé", "Ton compte, ton pseudo, ton adresse email, ta photo de profil, ton code ami et ta liste d'amis, "
+                                    "dans les 30 jours suivant ta demande. Nous te le confirmons par email."),
+            ("Ce qui reste sur ton téléphone", "Ton historique de parties n'est enregistré que sur ton téléphone : désinstaller Quarry l'efface. "
+                                               "Les manches sont déjà effacées de notre serveur 30 secondes après leur fin.")]),
+    "ko": ("Quarry 계정 삭제",
+           "앱이 휴대폰에 없더라도 언제든지 계정과 데이터 삭제를 요청할 수 있어요.",
+           [("요청 방법", "계정 이메일 주소로 quarrysupport@gmail.com에 \"계정 삭제\"라는 제목의 이메일을 보내 주세요. "
+                         "게스트이거나 Google로 로그인했다면 사용자 이름과 친구 코드(프로필 및 친구 탭)를 함께 적어 주세요."),
+            ("삭제되는 정보", "계정, 사용자 이름, 이메일 주소, 프로필 사진, 친구 코드, 친구 목록이 요청 후 30일 안에 삭제돼요. 완료되면 이메일로 알려 드려요."),
+            ("휴대폰에 남는 정보", "게임 기록은 휴대폰에만 저장돼요. Quarry를 삭제하면 함께 지워져요. 라운드는 끝나고 30초 후 서버에서 이미 삭제돼요.")]),
+}
+sections = []
+for code, (title, lead, cards) in DELETE.items():
+    body = "".join(f'<div class="card"><h2>{html.escape(h)}</h2><p>{html.escape(p)}</p></div>' for h, p in cards)
+    sections.append(f'<section lang="{code}"><h1>{html.escape(title)}</h1><p class="lead">{html.escape(lead)}</p>{body}'
+                    f'<a class="button" href="mailto:quarrysupport@gmail.com?subject=Delete%20my%20account">quarrysupport@gmail.com</a></section>')
+delete = page("Quarry · Delete your account", "../", lang_nav() + "".join(sections), "Account deletion")
+
 # ---------------------------------------------------------------- write
 (out / "privacy").mkdir(parents=True, exist_ok=True)
+(out / "delete-account").mkdir(exist_ok=True)
 (out / "assets").mkdir(exist_ok=True)
 (out / "index.html").write_text(index, encoding="utf-8")
 (out / "privacy/index.html").write_text(privacy, encoding="utf-8")
+(out / "delete-account/index.html").write_text(delete, encoding="utf-8")
 (out / "assets/logo.svg").write_text(LOGO.replace("currentColor", "#F4F2E9").replace("<svg ", '<svg xmlns="http://www.w3.org/2000/svg" '), encoding="utf-8")
 shutil.copyfile(res / "font/space_grotesk.ttf", out / "assets/space_grotesk.ttf")
 shutil.copyfile(app / "docs/licenses/SpaceGrotesk-OFL.txt", out / "assets/SpaceGrotesk-OFL.txt")
