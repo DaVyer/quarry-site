@@ -9,7 +9,7 @@ app = pathlib.Path(sys.argv[1])
 out = pathlib.Path(sys.argv[2])
 res = app / "app/src/main/res"
 LANGS = [("en", "values", "English"), ("fr", "values-fr", "Français"), ("ko", "values-ko", "한국어")]
-SECTIONS = ["who", "collect", "use", "see", "keep", "where", "rights", "children", "changes"]
+SECTIONS = ["who", "collect", "why", "see", "providers", "keep", "security", "rights", "children", "changes"]
 
 
 def android_text(raw: str) -> str:
